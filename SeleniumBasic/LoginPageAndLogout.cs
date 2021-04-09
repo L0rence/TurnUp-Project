@@ -145,19 +145,7 @@ namespace SeleniumBasic
                 Console.WriteLine("Test Failed !! ");
             }
 
-            // Edit the value 
 
-           IWebElement Edit_Btn =  driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[5]/a[1]"));
-
-            Edit_Btn.Click();
-
-            IWebElement Edit_Description =  driver.FindElement(By.XPath("//input[@id='Description']"));
-            Edit_Description.SendKeys("Edited Description ");
-
-            Thread.Sleep(3000);
-            // Save the Edited Details
-
-            driver.FindElement(By.XPath("//input[@id='SaveButton']")).Click();
 
         }
 
