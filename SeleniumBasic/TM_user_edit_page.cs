@@ -64,12 +64,12 @@ namespace SeleniumBasic
              IWebElement Click_Typecode=  driver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[1]/div/span[1]/span"));
             Click_Typecode.Click();
             
-            // Select Time code 
+            // Select Time code // 
             IWebElement Click_Time = driver.FindElement(By.XPath("//*[@id='TypeCode_listbox']/li[2]"));
             Click_Time.Click();
 
 
-            // Input filed Enter the Code
+            // Input filed Enter the Code//
            IWebElement Enter_code = driver.FindElement(By.XPath("//input[@id='Code']"));
             Enter_code.SendKeys("Lawrence_9/4/21");
 
