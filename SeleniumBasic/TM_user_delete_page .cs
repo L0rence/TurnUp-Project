@@ -128,7 +128,8 @@ namespace SeleniumBasic
 
             Thread.Sleep(1000);
 
-           var alert_win = driver.SwitchTo().Alert();
+            //Accept the Alert message 
+            var alert_win = driver.SwitchTo().Alert();
 
             alert_win.Accept();
 
