@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -59,19 +61,85 @@ namespace SeleniumBasic
 
             Thread.Sleep(1000);
 
-            // Delete the Last result
 
-            IWebElement Delete_Last_record =  driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[6]/td[last()]/a[2]"));
-            Delete_Last_record.Click();
 
-            Thread.Sleep(3000);
+            
 
-            //Accept the Alert message 
+            // Delete the record name "delete "from the list
+
+           IWebElement delete_record=  driver.FindElement(By.XPath("//td[normalize-space()='delete']//following::td[4]//a[2]"));
+            String deletename = delete_record.Text;
+            
+            delete_record.Click();
+
+            //Accept the Alert Button
+
             var alert_win = driver.SwitchTo().Alert();
 
-            alert_win.Accept();
+             alert_win.Accept();
 
-            Thread.Sleep(2000);
+             Thread.Sleep(3000);
+
+            // After delete the record check again -> go to last page and verify the "delete" record
+
+            IWebElement Click_Last_Btn1 = driver.FindElement(By.XPath("//a[@title='Go to the last page']"));
+            Click_Last_Btn1.Click();
+
+            Thread.Sleep(1000);
+
+            //Verify the delete record is present or not
+
+            String deleteRecord = "delete";
+
+            if(deleteRecord != "delete")
+            {
+                Console.WriteLine( "Test Passed");
+            }
+            else
+            {
+                Console.WriteLine("Test Failed");
+            }
+
+
+
+            //String name_01 = "delete";
+
+            //while (true)
+            //{
+            //    string text = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[1]/td[1]")).Text;
+            //    if (text.Equals(name_01))
+            //    {
+            //        break;
+            //    }
+            //    else
+            //    {
+            //        driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[5]/td[1]"));
+            //    }
+            //}
+
+            // Delete the Last result
+
+            //IWebElement Delete_Last_record =  driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[6]/td[last()]/a[2]"));
+            //Delete_Last_record.Click();
+
+            //String before_xpath   = ("//*[@id='tmsGrid']/div[3]/table/tbody/tr[");
+            // String after_xpath = "]/td[1]";
+
+            // for (int i = 1; i < 5; i++)
+            //  {
+            //     String name = driver.FindElement(By.XPath(before_xpath + i + after_xpath)).Text;
+
+            //      Console.WriteLine(name);
+            // }
+
+            // Thread.Sleep(3000);
+
+            //Accept the Alert message 
+            //var alert_win = driver.SwitchTo().Alert();
+
+            //alert_win.Accept();
+
+            //Thread.Sleep(3000);
 
 
 
@@ -79,20 +147,49 @@ namespace SeleniumBasic
 
             // IWebElement delete =  driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
 
-            IWebElement delete = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr"));
+            //IList delete = driver.FindElements(By.XPath("//*[@id='tmsGrid']/div[3]/table"));
+            //Console.WriteLine(delete.Count);
+
+            //foreach (var item in delete)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //String before_xpath = "//*[@id='tmsGrid']/div[3]/table/tbody/tr[";
+            //String after_xpath = "]/td[1]";
+
+            //for (int i = 1; i < 6; i++)
+            //{
+            //   String name = driver.FindElement(By.XPath(before_xpath + i + after_xpath)).Text;
+            //    Console.WriteLine(name);
+            //}
+            //*[@id='tmsGrid']/div[3]/table/tbody/tr[1]/td[1]
+            //*[@id="tmsGrid"]/div[3]/table/tbody/tr[3]/td[1]
+            ////tbody/tr[1]/td[1]
+            /////tbody/tr[2]/td[1]
+            /////tbody/tr[3]/td[1]
+
+            //IList para = driver.FindElements(By.XPath("//ul[@class='dropdown-menu']//li//a"));
+
+            // Console.WriteLine(para.Count);
+
+            // foreach (var item in para)
+            // {
+            //     Console.WriteLine(item);
+            // }
 
 
-            if(delete.Text == "Delete")
-            {
+            //if (delete.Text == "Delete")
+            //{
 
-                Console.WriteLine("Test Fail ");
-            }
-            else
-            {
-                Console.WriteLine("Test Pass");
-            }
+            //    Console.WriteLine("Test Fail ");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Test Pass");
+            //}
 
-             // Delete operation
+            // Delete operation
 
             // Login
             // adminstration
