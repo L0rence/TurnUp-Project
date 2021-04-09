@@ -52,89 +52,54 @@ namespace SeleniumBasic
             IWebElement TimeAndMaterial = driver.FindElement(By.LinkText("Time & Materials"));
             TimeAndMaterial.Click();
 
-            // Create New Record
-
-            IWebElement Creat_New_Btn = driver.FindElement(By.XPath("//*[@id='container']/p/a"));
-
-            Creat_New_Btn.Click();
-            Thread.Sleep(3000);
-
-            // Select TypeCode
-
-             IWebElement Click_Typecode=  driver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[1]/div/span[1]/span"));
-            Click_Typecode.Click();
-            
-            // Select Time code // 
-            IWebElement Click_Time = driver.FindElement(By.XPath("//*[@id='TypeCode_listbox']/li[2]"));
-            Click_Time.Click();
-
-
-            // Input filed Enter the Code//
-           IWebElement Enter_code = driver.FindElement(By.XPath("//input[@id='Code']"));
-            Enter_code.SendKeys("Lawrence_9/4/21");
-
-            //Input filed Enter the Description 
-
-            IWebElement Enter_Decription = driver.FindElement(By.XPath("//input[@id='Description']"));
-
-            Enter_Decription.SendKeys("Upadted Description");
-
-            // Input field Enter the Price per unit
-
-            IWebElement Prive_per_unit = driver.FindElement(By.XPath("//input[@class='k-formatted-value k-input']"));
-            Prive_per_unit.SendKeys("2123");
-
-            //Click the SaveBtn
-            IWebElement Save_btn = driver.FindElement(By.XPath("//input[@id='SaveButton']"));
-            Save_btn.Click();
-            Thread.Sleep(2000);
-            // Click the Last Btn  
+            Thread.Sleep(1000);
 
             IWebElement Click_Last_Btn = driver.FindElement(By.XPath("//a[@title='Go to the last page']"));
             Click_Last_Btn.Click();
-           
-            // Validate the data from the list
 
-          IWebElement Last_Result=   driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
-            if(Last_Result.Text == "Lawrence_9/4/21")
-            {
-                Console.WriteLine("Text Matched ! Test Passed ");
-            }
-            else
-            {
-                Console.WriteLine("Test Failed !");
-            }
-            Thread.Sleep(3000);
-            // Click the edit Btn 
-           
-           IWebElement edit_Result =  driver.FindElement(By.XPath("//tbody/tr[3]/td[5]/a[1]"));
-            edit_Result.Click();
-
-             // Edit the last result
-             IWebElement edit_Descrpition =  driver.FindElement(By.XPath("//input[@id='Description']"));
-              edit_Descrpition.Clear();
-              edit_Descrpition.SendKeys("Edited Deleted Description_9/4/21");
-
-
-            // Save the updated record
-
-            IWebElement Updated_save_btn = driver.FindElement(By.XPath("//input[@id='SaveButton']"));
-            Updated_save_btn.Click();
+            Thread.Sleep(1000);
 
             // Delete the Last result
 
             IWebElement Delete_Last_record =  driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[6]/td[last()]/a[2]"));
             Delete_Last_record.Click();
 
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
 
             //Accept the Alert message 
             var alert_win = driver.SwitchTo().Alert();
 
             alert_win.Accept();
 
+            Thread.Sleep(2000);
 
-             
+
+
+            // Validation
+
+            // IWebElement delete =  driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
+
+            IWebElement delete = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr"));
+
+
+            if(delete.Text == "Delete")
+            {
+
+                Console.WriteLine("Test Fail ");
+            }
+            else
+            {
+                Console.WriteLine("Test Pass");
+            }
+
+             // Delete operation
+
+            // Login
+            // adminstration
+            // Time and Material
+            //last Btn
+            //clcik delete
+            // perform Alert 
 
             // Thread.Sleep(2000);
 
