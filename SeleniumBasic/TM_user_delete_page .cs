@@ -18,7 +18,7 @@ namespace SeleniumBasic
         public void MaterialPageDelete()
         {
 
-            // Launch the Crome Brower
+            // Launch the Chrome Brower
 
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl("http://horse.industryconnect.io/Account/Login?ReturnUrl=%2f");
@@ -67,31 +67,33 @@ namespace SeleniumBasic
 
             // Delete the record name "delete "from the list
 
-           IWebElement delete_record=  driver.FindElement(By.XPath("//td[normalize-space()='delete']//following::td[4]//a[2]"));
+            IWebElement delete_record=  driver.FindElement(By.XPath("//td[normalize-space()='delete']//following::td[4]//a[2]"));
             String deletename = delete_record.Text;
             
             delete_record.Click();
 
             //Accept the Alert Button
 
-            var alert_win = driver.SwitchTo().Alert();
+            driver.SwitchTo().Alert().Accept();
 
-             alert_win.Accept();
+            
 
              Thread.Sleep(3000);
 
             // After delete the record check again -> go to last page and verify the "delete" record
 
-            IWebElement Click_Last_Btn1 = driver.FindElement(By.XPath("//a[@title='Go to the last page']"));
-            Click_Last_Btn1.Click();
+            //IWebElement Click_Last_Btn1 = driver.FindElement(By.XPath("//a[@title='Go to the last page']"));
+          //  Click_Last_Btn1.Click();
 
-            Thread.Sleep(1000);
+            Thread.Sleep(1000); 
 
             //Verify the delete record is present or not
 
-            String deleteRecord = "delete";
+          string delete_name =  driver.FindElement(By.XPath("//td[normalize-space()='delete']")).Text;
 
-            if(deleteRecord != "delete")
+            //String deleteRecord = "delete";
+
+            if(delete_name == "delete")
             {
                 Console.WriteLine( "Test Passed");
             }
