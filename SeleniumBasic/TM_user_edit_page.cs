@@ -16,7 +16,7 @@ namespace SeleniumBasic
         public void MaterialPageEdited()
         {
 
-            // Launch the Crome Brower
+            // Launch the Chrome Brower
 
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl("http://horse.industryconnect.io/Account/Login?ReturnUrl=%2f");
@@ -143,7 +143,7 @@ namespace SeleniumBasic
             else
             {
 
-                Console.WriteLine("Test Failed for the delete record !!");
+                Console.WriteLine("Test Failed for the Edited record !!");
             }
         }
 
