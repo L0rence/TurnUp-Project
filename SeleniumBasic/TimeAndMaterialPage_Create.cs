@@ -90,9 +90,9 @@ namespace SeleniumBasic
             Price_input_f2.SendKeys("1232");
 
 
-           // Price_unit.SendKeys("10");
+           // Price_unit.SendKeys("10"); 
 
-           //Click on the Save Button
+           //Click on the Save_Button  
 
            IWebElement Save_btn =  driver.FindElement(By.Id("SaveButton"));
              Save_btn.Click();
