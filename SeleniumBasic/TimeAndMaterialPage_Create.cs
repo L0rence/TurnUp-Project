@@ -71,26 +71,28 @@ namespace SeleniumBasic
 
             IWebElement Select_time = driver.FindElement(By.Id("Code"));
 
-            Select_time.SendKeys("LAWRENCE_8/4/2021");
+            Select_time.SendKeys("LAWRENCE_12/4/2021");
+
+            Thread.Sleep(2000);
 
             // Click on the Description Input field and Enter the Field 
 
              IWebElement description =  driver.FindElement(By.Id("Description"));
 
-            description.SendKeys("Lawrence_description_Created_on_8/4/2021");
+            description.SendKeys("Lawrence_description_Created_on_12/4/2021");
 
             // Click on the Price Unit and enter the value
 
-            //IWebElement Price_unit =  driver.FindElement(By.Id("Price"));  // ID not working so i am using xpath 
+           IWebElement price_input_f1 = driver.FindElement(By.XPath("//input[@class='k-formatted-value k-input']"));
+            price_input_f1.Click();
 
-            // IWebElement Price_unit = driver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[4]/div/span[1]/span/input[1]"));
+            IWebElement Price_input_f2 = driver.FindElement(By.XPath("//input[@id='Price']"));
+            Price_input_f2.SendKeys("1232");
 
-           // driver.FindElement(By.XPath("/html/body/div[4]/form/div/div[4]/div/span[1]/span/input[1]")).SendKeys("sdd");
 
-           
            // Price_unit.SendKeys("10");
 
-            //Click on the Save Button
+           //Click on the Save Button
 
            IWebElement Save_btn =  driver.FindElement(By.Id("SaveButton"));
              Save_btn.Click();
@@ -99,7 +101,7 @@ namespace SeleniumBasic
 
              Thread.Sleep(3000);
 
-            String name = "LAWRENCE_7/4/2021";
+           /* String name = "LAWRENCE_12/4/2021";
 
             String row_name = driver.FindElement(By.XPath("//tbody/tr[1]/td[1]")).Text;
 
@@ -123,7 +125,7 @@ namespace SeleniumBasic
 
            delete.Click();
 
-
+            */
 
 
 
