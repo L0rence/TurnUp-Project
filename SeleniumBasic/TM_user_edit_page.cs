@@ -71,7 +71,7 @@ namespace SeleniumBasic
 
             // Input filed Enter the Code//
            IWebElement Enter_code = driver.FindElement(By.XPath("//input[@id='Code']"));
-            Enter_code.SendKeys("Lawrence_9/4/21");
+            Enter_code.SendKeys("Lawrence");
 
             //Input filed Enter the Description 
 
@@ -92,22 +92,23 @@ namespace SeleniumBasic
 
             IWebElement Click_Last_Btn = driver.FindElement(By.XPath("//a[@title='Go to the last page']"));
             Click_Last_Btn.Click();
-           
+            Thread.Sleep(3000);
+
             // Validate the data from the list
 
-          IWebElement Last_Result=   driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
-            if(Last_Result.Text == "Lawrence_9/4/21")
-            {
-                Console.WriteLine("Text Matched ! Test Passed ");
-            }
-            else
-            {
-                Console.WriteLine("Test Failed !");
-            }
-            Thread.Sleep(3000);
+            /* IWebElement Last_Result=   driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
+               if(Last_Result.Text == "Lawrence")
+               {
+                   Console.WriteLine("Text Matched ! Test Passed ");
+               }
+               else
+               {
+                   Console.WriteLine("Test Failed !");
+               }
+               Thread.Sleep(3000);*/
             // Click the edit Btn 
-           
-           IWebElement edit_Result =  driver.FindElement(By.XPath("//tbody/tr[3]/td[5]/a[1]"));
+
+            IWebElement edit_Result =  driver.FindElement(By.XPath("//td[normalize-space()='Lawrence']//following::td//a[1]"));
             edit_Result.Click();
 
             // Edit the last result
@@ -121,7 +122,29 @@ namespace SeleniumBasic
 
            IWebElement Updated_save_btn =  driver.FindElement(By.XPath("//input[@id='SaveButton']"));
             Updated_save_btn.Click();
+            Thread.Sleep(2000);
 
+            // Go to Last Page and Validate the Delete record 
+
+           IWebElement LastPge = driver.FindElement(By.XPath("//span[contains(text(),'Go to the last page')]"));
+
+            LastPge.Click();
+
+            // Validate the record
+
+            Thread.Sleep(2000);
+
+           string edit_record_name =  driver.FindElement(By.XPath("//td[normalize-space()='Lawrence']//following::td[2]")).Text;
+
+            if(edit_record_name == "Edited Edited Description_9/4/21")
+            {
+                Console.WriteLine("Test Passed for the Edited record !!");
+            }
+            else
+            {
+
+                Console.WriteLine("Test Failed for the delete record !!");
+            }
         }
 
 
