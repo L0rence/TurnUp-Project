@@ -1,10 +1,13 @@
 ﻿using System;
 namespace SeleniumBasic.Pages
 {
-    public class HomePage
+    public class LoginPage
     {
-        public HomePage()
+
+        public LoginPage()
         {
+            //Login
+
         }
     }
 }
