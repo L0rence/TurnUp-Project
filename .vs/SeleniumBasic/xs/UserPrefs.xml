@@ -4,16 +4,12 @@
       <File FileName="SeleniumBasic/TM_user_delete_page .cs" Line="110" Column="54" />
       <File FileName="SeleniumBasic/TM_user_edit_page.cs" />
       <File FileName="SeleniumBasic/EmptyClass.cs" />
+      <File FileName="SeleniumBasic/Pages/HomePage.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="SeleniumBasic" expanded="True">
-            <Node name="Solution Items" expanded="True" />
-            <Node name="SeleniumBasic" expanded="True">
-              <Node name="TM_user_delete_page .cs" selected="True" />
-            </Node>
-          </Node>
+          <Node name="SeleniumBasic" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
