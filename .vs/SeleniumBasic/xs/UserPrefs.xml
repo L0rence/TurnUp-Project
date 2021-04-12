@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{EC6A4B14-07EF-4348-9587-F47A303123E9}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="SeleniumBasic/TM_user_delete_page .cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="SeleniumBasic/TM_user_delete_page .cs" Line="16" Column="1" />
+      <File FileName="SeleniumBasic/TM_user_delete_page .cs" Line="110" Column="28" />
       <File FileName="SeleniumBasic/TM_user_edit_page.cs" />
       <File FileName="SeleniumBasic/EmptyClass.cs" />
     </Files>
