@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace SeleniumBasic
 {
@@ -14,16 +15,18 @@ namespace SeleniumBasic
             driver.FindElement(By.Name("q")).SendKeys("cheese" + Keys.Enter);
 
 
-           // WebDriverWait wait = new(driver, TimeSpan.FromSeconds(20));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+            wait.Until(ExpectedConditions.ElementExists(By.ClassName("ContactUs")));
 
 
 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+            //WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
 
-            IWebElement firstResult = wait.Until(e => e.FindElement(By.XPath("//a/h3")));
+            //IWebElement firstResult = wait.Until(e => e.FindElement(By.XPath("//a/h3")));
 
-            Console.WriteLine(firstResult.Text);
+            //Console.WriteLine(firstResult.Text);
         }
     }
 }

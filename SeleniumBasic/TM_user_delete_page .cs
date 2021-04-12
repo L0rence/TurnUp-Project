@@ -6,7 +6,8 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace SeleniumBasic
 {
@@ -55,6 +56,7 @@ namespace SeleniumBasic
             TimeAndMaterial.Click();
 
             Thread.Sleep(1000);
+            
 
             IWebElement Click_Last_Btn = driver.FindElement(By.XPath("//a[@title='Go to the last page']"));
             Click_Last_Btn.Click();
@@ -78,22 +80,25 @@ namespace SeleniumBasic
 
             
 
-             Thread.Sleep(3000);
+             //Thread.Sleep(3000);
+
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(50);
+
 
             // After delete the record check again -> go to last page and verify the "delete" record
 
             //IWebElement Click_Last_Btn1 = driver.FindElement(By.XPath("//a[@title='Go to the last page']"));
-          //  Click_Last_Btn1.Click();
+            //  Click_Last_Btn1.Click();
 
-            Thread.Sleep(1000); 
+
 
             //Verify the delete record is present or not
 
-          string delete_name =  driver.FindElement(By.XPath("//td[normalize-space()='delete']")).Text;
+            string delete_name = driver.FindElement(By.XPath("//td[normalize-space()='delete']")).Text;
 
             //String deleteRecord = "delete";
 
-            if(delete_name == "delete")
+            if (delete_name != "delete")
             {
                 Console.WriteLine( "Test Passed");
             }
