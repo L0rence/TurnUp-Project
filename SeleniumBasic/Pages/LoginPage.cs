@@ -18,6 +18,8 @@ namespace SeleniumBasic.Pages
             //maximise window
             driver.Manage().Window.Maximize();
 
+            //*********** Implement try and catch systax ***************//
+
             try
                 {
 
