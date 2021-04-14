@@ -69,12 +69,12 @@ namespace SeleniumBasic.Pages
 
          if(Check_Record.Text == "LA")
             {
-                Console.WriteLine("Created Successful");
+                //Console.WriteLine("Created Successful");
                 Assert.Pass("Record Created Sucessfull, Test Passed!");
             }
             else
             {
-                Console.WriteLine("Created un successful");
+                //Console.WriteLine("Created un successful");
                 Assert.Fail("Record Created Unsucessful, Test Failed!");
             } 
 
@@ -123,13 +123,13 @@ namespace SeleniumBasic.Pages
 
             if (edit_record_name == "Edited Edited Description")
             {
-                Console.WriteLine("Test Passed for the Edited record !!");
+               // Console.WriteLine("Test Passed for the Edited record !!");
                 Assert.Pass("Edited Successful!, Test Passed");
             }
             else
             {
 
-                Console.WriteLine("Test Failed for the Edited record !!");
+                //Console.WriteLine("Test Failed for the Edited record !!");
                 Assert.Fail("Edited Failed! , Test Failed ");
             }
         }
@@ -191,20 +191,20 @@ namespace SeleniumBasic.Pages
 
             // Validation for Delete Record
             Thread.Sleep(3000);
-            IWebElement verify_delete_rocord = driver.FindElement(By.XPath("//span[contains(text(),'1 - 10 of 5447 items')]"));
+            IWebElement verify_delete_rocord = driver.FindElement(By.XPath("//span[contains(text(),'1 - 10 of 5444 items')]"));
 
             // ************ Reduced number from the xpath when you run the test **********// 
 
-            if (verify_delete_rocord.Text == "1 - 10 of 5448 items")
+            if (verify_delete_rocord.Text == "1 - 10 of 5444 items")
             {
-                Console.WriteLine("Number Not matching so Test Failed !");
-                Assert.Pass("Number Not matching so Test Failed ! ");
+              //  Console.WriteLine("Number Not matching so Test Failed !");
+                Assert.Pass("Number Not matching so Test Passed ! ");
                 
             }
             else
             {
-                Console.WriteLine("Number matching so Test Pass !");
-                Assert.Fail("Number matching so Test Pass ! ");
+               // Console.WriteLine("Number matching so Test Pass !");
+                Assert.Fail("Number matching so Test Failed ! ");
                
             }
 
