@@ -18,22 +18,31 @@ namespace SeleniumBasic.Pages
             //maximise window
             driver.Manage().Window.Maximize();
 
-            //identify and enter username
-            IWebElement username = driver.FindElement(By.Id("UserName"));
-            username.SendKeys("hari");
+            try
+                {
 
-            //identify and enter password
-            IWebElement password = driver.FindElement(By.Id("Password"));
-            password.SendKeys("123123");
+                //identify and enter username
+                IWebElement username = driver.FindElement(By.Id("UserName"));
+                username.SendKeys("hari");
 
-            //identify and click login button
-            IWebElement LoginButton = driver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
-            LoginButton.Click();
-            Thread.Sleep(100);
+                //identify and enter password
+                IWebElement password = driver.FindElement(By.Id("Password"));
+                password.SendKeys("123123");
 
-            //validate if the user is able to login successfully
-            IWebElement helloHari = driver.FindElement(By.XPath("//*[@id='logoutForm']/ul/li/a"));
+                //identify and click login button
+                IWebElement LoginButton = driver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
+                LoginButton.Click();
+                Thread.Sleep(100);
 
+                //validate if the user is able to login successfully
+                IWebElement helloHari = driver.FindElement(By.XPath("//*[@id='logoutForm']/ul/li/a"));
+
+
+            }
+            catch (Exception msg)
+            {
+                Assert.Fail("Test Failed at Login Page", msg.Message);
+            }
             //if (helloHari.Text == "Hello hari!")
             //{
             //    Console.WriteLine("Logged in successfully, test passed");

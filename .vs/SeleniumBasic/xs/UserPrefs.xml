@@ -1,21 +1,42 @@
 ﻿<Properties StartupConfiguration="{EC6A4B14-07EF-4348-9587-F47A303123E9}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="SeleniumBasic/TM_user_delete_page .cs" Line="110" Column="54" />
-      <File FileName="SeleniumBasic/TM_user_edit_page.cs" />
-      <File FileName="SeleniumBasic/EmptyClass.cs" />
-      <File FileName="SeleniumBasic/Pages/HomePage.cs" Line="1" Column="1" />
+      <File FileName="SeleniumBasic/Pages/LoginPage.cs" Line="26" Column="40" />
+      <File FileName="SeleniumBasic/Utilities/CommonDriver.cs" />
+      <File FileName="SeleniumBasic/Pages/HomePage.cs" />
+      <File FileName="SeleniumBasic/Pages/TM_Page.cs" Line="207" Column="60" />
+      <File FileName="SeleniumBasic/Base_Class/TM_PageTest.cs" Line="67" Column="48" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="SeleniumBasic" expanded="True" selected="True" />
+          <Node name="SeleniumBasic" expanded="True" selected="True">
+            <Node name="SeleniumBasic" expanded="True">
+              <Node name="Base_Class" expanded="True" />
+              <Node name="Pages" expanded="True" />
+              <Node name="Utilities" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="SeleniumBasic" expanded="True">
+            <Node name="SeleniumBasic" expanded="True">
+              <Node name="SeleniumBasic" expanded="True" />
+              <Node name="SeleniumBasic.Base_Class" expanded="True">
+                <Node name="Base_Class_Test" expanded="True">
+                  <Node name="create_TM_Test" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
