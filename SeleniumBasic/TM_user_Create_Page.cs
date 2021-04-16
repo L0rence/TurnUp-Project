@@ -8,7 +8,7 @@ using OpenQA.Selenium.Firefox;
 
 namespace SeleniumBasic
 {
-    public class Tests
+    public class TestsV1
     {
         
 
